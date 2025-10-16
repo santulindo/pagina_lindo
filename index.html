@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BOOR - Moda Urbana</title>
+
+  <!-- Font + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="#inicio" class="logo">BOOR</a>
+        <span class="tag">Moda urbana</span>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="actions">
+        <button class="search-btn" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+        <button class="cart-btn" id="cart-btn" aria-label="Carrito">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cart-count" class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CARRITO (panel) -->
+  <aside class="cart-panel" id="cart-panel" aria-hidden="true">
+    <div class="cart-panel-header">
+      <h3>Tu carrito</h3>
+      <button id="close-cart" class="close-cart" aria-label="Cerrar carrito">&times;</button>
+    </div>
+
+    <ul id="cart-items" class="cart-items">
+      <!-- Items añadidos dinámicamente -->
+    </ul>
+
+    <div class="cart-summary">
+      <div class="subtotal">
+        <span>Subtotal</span>
+        <span id="cart-total">$0</span>
+      </div>
+      <div class="cart-actions">
+        <button id="clear-cart" class="btn-outline">Vaciar</button>
+        <button id="checkout" class="btn-primary">Pagar</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <!-- HERO / INICIO -->
+    <section id="inicio" class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>Exprésate con estilo <span>BOOR</span></h1>
+          <p class="lead">Ropa juvenil, moderna y confortable. Encuentra tu outfit ideal.</p>
+          <a class="btn-primary" href="#productos">Ver productos</a>
+        </div>
+        <div class="hero-image">
+          <img src="IMG/hero.jpg" alt="Modelo BOOR">
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos" class="products">
+      <div class="section-head">
+        <h2>Productos destacados</h2>
+        <p class="muted">Seleccionamos los mejores artículos para ti — calidad y estilo urbano.</p>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+        <!-- Productos (puedes editar/añadir) -->
+        <!-- Card ejemplo -->
+        <article class="product-card" data-id="1" data-name="Camiseta básica" data-price="45000">
+          <div class="img-wrap"><img src="img/camiseta.jpg" alt="Camiseta básica"></div>
+          <div class="card-body">
+            <h3 class="product-name">Camiseta básica</h3>
+            <p class="product-price">$45.000</p>
+            <div class="card-actions">
+              <button class="btn-outline">Ver</button>
+              <button class="btn-add" aria-label="Agregar Camiseta básica">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="2" data-name="Chaqueta denim" data-price="120000">
+          <div class="img-wrap"><img src="img/chaqueta.jpg" alt="Chaqueta denim"></div>
+          <div class="card-body">
+            <h3 class="product-name">Chaqueta denim</h3>
+            <p class="product-price">$120.000</p>
+            <div class="card-actions">
+              <button class="btn-outline">Ver</button>
+              <button class="btn-add">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="3" data-name="Pantalón cargo" data-price="95000">
+          <div class="img-wrap"><img src="img/pantalon.jpg" alt="Pantalón cargo"></div>
+          <div class="card-body">
+            <h3 class="product-name">Pantalón cargo</h3>
+            <p class="product-price">$95.000</p>
+            <div class="card-actions">
+              <button class="btn-outline">Ver</button>
+              <button class="btn-add">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="4" data-name="Sudadera oversize" data-price="85000">
+          <div class="img-wrap"><img src="img/sudadera.jpg" alt="Sudadera"></div>
+          <div class="card-body">
+            <h3 class="product-name">Sudadera oversize</h3>
+            <p class="product-price">$85.000</p>
+            <div class="card-actions">
+              <button class="btn-outline">Ver</button>
+              <button class="btn-add">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="5" data-name="Gorra snapback" data-price="60000">
+          <div class="img-wrap"><img src="img/gorra.jpg" alt="Gorra"></div>
+          <div class="card-body">
+            <h3 class="product-name">Gorra snapback</h3>
+            <p class="product-price">$60.000</p>
+            <div class="card-actions">
+              <button class="btn-outline">Ver</button>
+              <button class="btn-add">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="6" data-name="Buzo con capucha" data-price="110000">
+          <div class="img-wrap"><img src="img/buzo.jpg" alt="Buzo"></div>
+          <div class="card-body">
+            <h3 class="product-name">Buzo con capucha</h3>
+            <p class="product-price">$110.000</p>
+            <div class="card-actions">
+              <button class="btn-outline">Ver</button>
+              <button class="btn-add">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="7" data-name="Short deportivo" data-price="70000">
+          <div class="img-wrap"><img src="img/short deportivo.jpg " alt="Short deportivo"></div>
+          <div class="card-body">
+            <h3 class="product-name">Short deportivo</h3>
+            <p class="product-price">$70.000</p>
+            <div class="card-actions">
+              <button class="btn-outline">Ver</button>
+              <button class="btn-add">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="8" data-name="Tenis streetwear" data-price="180000">
+          <div class="img-wrap"><img src="img/tenis.jpg" alt="Tenis"></div>
+          <div class="card-body">
+            <h3 class="product-name">Tenis streetwear</h3>
+            <p class="product-price">$180.000</p>
+            <div class="card-actions">
+              <button class="btn-outline">Ver</button>
+              <button class="btn-add">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <h2>Contáctanos</h2>
+          <p class="muted">¿Necesitas ayuda? Escríbenos y te responderemos a la brevedad.</p>
+        </div>
+        <form id="contact-form" class="contact-form">
+          <input type="text" name="name" placeholder="Tu nombre" required>
+          <input type="email" name="email" placeholder="Tu correo" required>
+          <textarea name="message" placeholder="Tu mensaje" rows="4" required></textarea>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Enviar mensaje</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>© 2025 BOOR - Moda Urbana</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- pequeño toast -->
+  <div id="toast" class="toast">Producto añadido</div>
+</body>
+</html>
